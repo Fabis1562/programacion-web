@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Especialistas - ConectaPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modales.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body style="background:var(--color-fondo);">
+    <div id="placeholder-header"></div>
+
+    <main class="contenedor seccion">
+        <h1 class="seccion-titulo">Encuentra a tu Especialista</h1>
+        <p class="seccion-bajada">Explora la lista completa de profesionales verificados en tu zona.</p>
+        
+        <div style="max-width: 800px; margin: 0 auto; margin-bottom: 40px; display: flex; gap: 15px; flex-wrap: wrap;">
+            <div class="barra-busqueda" style="margin: 0; flex: 1; min-width: 300px;">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="input-busqueda" placeholder="Buscar por especialidad, nombre...">
+            </div>
+            
+            <select id="filtro-orden" style="padding: 15px 20px; border-radius: var(--radio-borde-lg); border: 2px solid transparent; outline: none; font-family: var(--fuente-principal); font-size: 16px; min-width: 200px; background: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); color: var(--color-texto);">
+                <option value="todos">Mostrar Todos</option>
+                <option value="verificados">Solo Verificados ✅</option>
+                <option value="mejor_calificados">Mejor Calificados ⭐</option>
+            </select>
+        </div>
+
+        <div class="cuadricula-especialistas" id="contenedor-especialistas" style="margin-top:40px;">
+            <!-- Aquí se inyectarán dinámicamente las tarjetas de los especialistas desde la base de datos -->
+            <p style="text-align:center; grid-column: 1 / -1; color: var(--color-texto-secundario);">Cargando especialistas...</p>
+        </div>
+    </main>
+
+    <div id="placeholder-footer"></div>
+    <div id="placeholder-modales"></div>
+
+    <script src="js/layout.js?v=8"></script>
+    <script src="js/modales.js?v=8"></script>
+    <script src="js/busqueda.js?v=8"></script>
+</body>
+</html>

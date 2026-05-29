@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - ConectaPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <style>
+        .admin-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; border-radius: var(--radio-borde); overflow: hidden; box-shadow: var(--sombra); }
+        .admin-table th, .admin-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .admin-table th { background-color: var(--color-primario); color: white; font-family: var(--fuente-titulos); }
+        .admin-table tr:last-child td { border-bottom: none; }
+        .admin-table tbody tr:hover { background-color: #f9f9ff; }
+        .badge { padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .badge-verificado { background: #dcfce7; color: #166534; }
+        .badge-pendiente { background: #fef08a; color: #854d0e; }
+        .btn-toggle { background: var(--color-fondo); border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; cursor: pointer; transition: all 0.2s; }
+        .btn-toggle:hover { background: #eee; }
+    </style>
+</head>
+<body style="background:var(--color-fondo);">
+    <div id="placeholder-header"></div>
+    
+    <main class="contenedor" style="padding: 40px 0; min-height: 70vh;">
+        <h1 style="color: var(--color-secundario); font-family: var(--fuente-titulos); margin-bottom: 20px;">
+            <i class="fa-solid fa-shield-halved"></i> Panel de Administración
+        </h1>
+        <p>Gestiona los especialistas registrados en la plataforma.</p>
+
+        <div id="error-message" style="display: none; padding: 20px; background: #fee2e2; color: #b91c1c; border-radius: 8px; margin-top: 20px;">
+            No tienes permisos para ver esta página. Serás redirigido.
+        </div>
+
+        <table class="admin-table" id="tabla-especialistas" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría / Rol</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se llena con JS -->
+            </tbody>
+        </table>
+    </main>
+
+    <div id="placeholder-footer"></div>
+    
+    <script>
+        async function cargarEspecialistas() {
+            try {
+                const res = await fetch('../backend/api/obtener_todos_especialistas.php');
+                const result = await res.json();
+
+                if (res.status === 401 || res.status === 403) {
+                    document.getElementById('error-message').style.display = 'block';
+                    setTimeout(() => window.location.href = 'index.html', 3000);
+                    return;
+                }
+
+                if (result.status === 'success') {
+                    document.getElementById('tabla-especialistas').style.display = 'table';
+                    const tbody = document.querySelector('#tabla-especialistas tbody');
+                    tbody.innerHTML = '';
+
+                    result.data.forEach(esp => {
+                        const estado = esp.verificado ? '<span class="badge badge-verificado">Verificado</span>' : '<span class="badge badge-pendiente">Pendiente</span>';
+                        const toggleText = esp.verificado ? 'Quitar Verificación' : 'Aprobar Perfil';
+                        
+                        tbody.innerHTML += `
+                            <tr>
+                                <td>${esp.id}</td>
+                                <td><strong>${esp.nombre}</strong></td>
+                                <td>${esp.categoria_nombre}<br><small style="color:#666;">${esp.rol_especifico}</small></td>
+                                <td>${esp.ubicacion}</td>
+                                <td>${estado}</td>
+                                <td>
+                                    <button class="btn-toggle" onclick="toggleVerificacion(${esp.id}, ${!esp.verificado})">
+                                        <i class="fa-solid fa-check"></i> ${toggleText}
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+            } catch (error) {
+                console.error("Error cargando especialistas", error);
+            }
+        }
+
+        window.toggleVerificacion = async (id, nuevoEstado) => {
+            try {
+                const res = await fetch('../backend/api/verificar_especialista.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ especialista_id: id, verificado: nuevoEstado })
+                });
+                if (res.ok) {
+                    cargarEspecialistas(); // Recargar la tabla
+                } else {
+                    alert("Error al actualizar el estado");
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', cargarEspecialistas);
+    </script>
+    <script src="js/layout.js?v=8"></script>
+</body>
+</html>

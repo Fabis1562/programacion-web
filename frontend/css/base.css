@@ -1,0 +1,120 @@
+:root {
+    --color-primario: #4f46e5;
+    --color-primario-hover: #4338ca;
+    --color-secundario: #f43f5e;
+    --color-secundario-hover: #e11d48;
+    --color-fondo: #f8fafc;
+    --color-tarjeta: #ffffff;
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #64748b;
+    --color-borde: #e2e8f0;
+
+    --radio-borde-sm: 8px;
+    --radio-borde-md: 16px;
+    --radio-borde-lg: 24px;
+
+    --sombra-suave: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --sombra-media: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-texto-secundario);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-texto-principal);
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.circulo-decorativo {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.circulo-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    top: -100px;
+    left: -100px;
+}
+
+.circulo-2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #f43f5e, #fb923c);
+    top: 200px;
+    right: -50px;
+}
+
+.icono-plomeria::before {
+    content: "\f0ad";
+}
+
+.icono-electricidad::before {
+    content: "\f0e7";
+}
+
+.icono-diseno::before {
+    content: "\f5fc";
+}
+
+.icono-construccion::before {
+    content: "\f7f6";
+}
+
+.icono-consultoria::before {
+    content: "\f0b1";
+}
+
+.icono-marketing::before {
+    content: "\f0a1";
+}
+
+.icono-fotografia::before {
+    content: "\f030";
+}
+
+.icono-limpieza::before {
+    content: "\f51a";
+}
+
+.icono-ubicacion::before {
+    content: "\f3c5";
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - ConectaPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body style="background:var(--color-fondo); display: flex; flex-direction: column; min-height: 100vh;">
+    <div id="placeholder-header"></div>
+    
+    <main class="contenedor" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 0;">
+        <div style="background: white; padding: 40px; border-radius: var(--radio-borde-lg); box-shadow: var(--sombra); max-width: 450px; width: 100%; text-align: center;">
+            <div style="width: 60px; height: 60px; background: #e0e7ff; color: var(--color-primario); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 20px auto;">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h2 style="font-family: var(--fuente-titulos); color: var(--color-secundario); margin-bottom: 10px;">Recuperar Contraseña</h2>
+            <p style="color: var(--color-texto-secundario); margin-bottom: 25px; font-size: 14px;">Ingresa el correo electrónico asociado a tu cuenta y te enviaremos las instrucciones para restablecerla.</p>
+            
+            <form id="form-recuperar" style="text-align: left;">
+                <div class="grupo-formulario">
+                    <label for="email-recuperar">Correo Electrónico</label>
+                    <input type="email" id="email-recuperar" class="input-formulario" placeholder="ejemplo@correo.com" required>
+                </div>
+                <button type="submit" class="boton boton-primario boton-bloque" id="btn-enviar-correo">Enviar Enlace</button>
+            </form>
+
+            <div id="mensaje-feedback" style="margin-top: 20px; font-size: 14px; padding: 15px; border-radius: 8px; display: none;"></div>
+            
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="color: var(--color-primario); font-size: 14px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="placeholder-footer"></div>
+    <div id="placeholder-modales"></div>
+    
+    <script>
+        document.getElementById('form-recuperar').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btn-enviar-correo');
+            const email = document.getElementById('email-recuperar').value;
+            const feedback = document.getElementById('mensaje-feedback');
+            
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+            feedback.style.display = 'none';
+
+            try {
+                const res = await fetch('../backend/api/solicitar_recuperacion.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+                
+                feedback.style.display = 'block';
+                if (data.status === 'success') {
+                    feedback.style.background = '#dcfce7';
+                    feedback.style.color = '#166534';
+                    feedback.innerHTML = `<strong>¡Correo Enviado!</strong><br><br>${data.message}`;
+                    document.getElementById('form-recuperar').reset();
+                } else {
+                    feedback.style.background = '#fee2e2';
+                    feedback.style.color = '#b91c1c';
+                    feedback.textContent = data.message;
+                }
+            } catch (error) {
+                feedback.style.display = 'block';
+                feedback.style.background = '#fee2e2';
+                feedback.style.color = '#b91c1c';
+                feedback.textContent = 'Error al conectar con el servidor.';
+            } finally {
+                btn.textContent = 'Enviar Enlace';
+                btn.disabled = false;
+            }
+        });
+    </script>
+    <script src="js/layout.js?v=9"></script>
+    <script src="js/modales.js?v=9"></script>
+</body>
+</html>

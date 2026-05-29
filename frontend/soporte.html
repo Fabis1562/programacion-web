@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - ConectaPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modales.css">
+</head>
+<body>
+    <div id="placeholder-header"></div>
+    <main class="contenedor seccion">
+        <h1 class="seccion-titulo">Centro de Soporte</h1>
+        <p class="seccion-bajada">¿Necesitas ayuda? Aquí podrás abrir un ticket de soporte o revisar las preguntas frecuentes.</p>
+        
+        <div style="background:white; padding:40px; border-radius:var(--radio-borde-md); box-shadow:var(--sombra-suave); max-width:600px; margin:0 auto;">
+            <form class="formulario">
+                <div class="grupo-input">
+                    <label>Asunto</label>
+                    <input type="text" style="width:100%; padding:10px; border:1px solid var(--color-borde); border-radius:8px;" placeholder="¿En qué podemos ayudarte?">
+                </div>
+                <div class="grupo-input">
+                    <label>Mensaje</label>
+                    <textarea style="width:100%; padding:10px; border:1px solid var(--color-borde); border-radius:8px; min-height:150px;"></textarea>
+                </div>
+                <button type="submit" class="boton boton-primario boton-bloque">Enviar Mensaje</button>
+            </form>
+        </div>
+    </main>
+    <div id="placeholder-footer"></div>
+    <div id="placeholder-modales"></div>
+    <script src="js/layout.js"></script>
+    <script src="js/modales.js"></script>
+</body>
+</html>

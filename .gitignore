@@ -1,0 +1,15 @@
+# Ignorar variables de entorno con credenciales sensibles
+backend/.env
+
+# Ignorar archivos subidos por usuarios (guardar la estructura)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Ignorar configuración de VS Code
+.vscode/
+
+# Ignorar archivos de sistema y temporales
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log

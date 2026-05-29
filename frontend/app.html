@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaPro - Encuentra Especialistas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="circulo-decorativo circulo-1"></div>
+    <div class="circulo-decorativo circulo-2"></div>
+
+    <header class="navegador">
+        <div class="contenedor contenedor-navegador">
+            <div class="logotipo">
+                <div class="icono-logotipo">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <span class="texto-logotipo">ConectaPro</span>
+            </div>
+
+            <div class="barra-busqueda">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Buscar especialistas, servicios, etc...">
+                <button class="boton-buscar-icono"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <nav class="acciones-navegacion">
+                <a href="#" class="enlace-inicio-sesion" id="btn-login-header">Iniciar Sesión</a>
+                <a href="#" class="boton boton-primario" id="btn-registro-header">Regístrate <i
+                        class="fa-solid fa-user-plus"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion-hero">
+            <div class="contenedor contenido-hero">
+                <h1>Encuentra al <span class="texto-resaltado">Especialista Perfecto</span> para tu Proyecto</h1>
+                <p>La plataforma definitiva que conecta emprendedores y hogares con profesionales verificados,
+                    ofreciendo un servicio de excelencia garantizada.</p>
+                <div class="grupo-botones-hero">
+                    <a href="#categorias" class="boton boton-lg boton-primario">Explorar Servicios</a>
+                    <a href="#ofrecer" class="boton boton-lg boton-secundario">Ofrecer Mis Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="categorias" class="seccion contenedor">
+            <div class="encabezado-seccion">
+                <h2>Explora por Categorías</h2>
+                <p>Navega a través de nuestros sectores y encuentra justo lo que necesitas.</p>
+            </div>
+
+            <div class="cuadricula-categorias">
+                <div class="tarjeta-categoria" data-categoria="plomeria">
+                    <div class="icono-contenedor icon-azul"><i class="fa-solid icono-plomeria"></i></div>
+                    <h3>Plomería</h3>
+                    <span>120 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="electricidad">
+                    <div class="icono-contenedor icon-amarillo"><i class="fa-solid icono-electricidad"></i></div>
+                    <h3>Electricidad</h3>
+                    <span>95 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="diseno">
+                    <div class="icono-contenedor icon-morado"><i class="fa-solid icono-diseno"></i></div>
+                    <h3>Diseño</h3>
+                    <span>230 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="construccion">
+                    <div class="icono-contenedor icon-naranja"><i class="fa-solid icono-construccion"></i></div>
+                    <h3>Construcción</h3>
+                    <span>85 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="consultoria">
+                    <div class="icono-contenedor icon-verde"><i class="fa-solid icono-consultoria"></i></div>
+                    <h3>Consultoría</h3>
+                    <span>170 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="marketing">
+                    <div class="icono-contenedor icon-rojo"><i class="fa-solid icono-marketing"></i></div>
+                    <h3>Marketing</h3>
+                    <span>140 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="fotografia">
+                    <div class="icono-contenedor icon-rosa"><i class="fa-solid icono-fotografia"></i></div>
+                    <h3>Fotografía</h3>
+                    <span>90 especialistas</span>
+                </div>
+                <div class="tarjeta-categoria" data-categoria="limpieza">
+                    <div class="icono-contenedor icon-celeste"><i class="fa-solid icono-limpieza"></i></div>
+                    <h3>Limpieza</h3>
+                    <span>160 especialistas</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="especialistas" class="seccion seccion-oscura">
+            <div class="contenedor">
+                <div class="encabezado-especialistas">
+                    <h2>Especialistas Destacados</h2>
+                    <a href="#" class="enlace-ver-todos">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="cuadricula-especialistas" id="contenedor-tarjetas-especialistas">
+                    <div class="tarjeta-especialista">
+                        <div class="cabecera-tarjeta">
+                            <span class="etiqueta-verificado"><i class="fa-solid fa-shield-check"></i> Verificado</span>
+                            <img src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&q=80&w=600&h=400"
+                                alt="Carlos Méndez" class="imagen-fondo-tarjeta">
+                            <div class="superposicion-gradiente"></div>
+                        </div>
+                        <div class="cuerpo-tarjeta">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80"
+                                alt="Perfil" class="imagen-perfil-flotante">
+                            <h3>Carlos Méndez</h3>
+                            <p class="rol-especialista">Plomería Residencial</p>
+
+                            <div class="detalles-especialista">
+                                <div class="detalle-item calificacion">
+                                    <i class="fa-solid fa-star"></i> <span>4.9 (127)</span>
+                                </div>
+                                <div class="detalle-item ubicacion">
+                                    <i class="fa-solid icono-ubicacion"></i> <span>San José</span>
+                                </div>
+                            </div>
+
+                            <button class="boton boton-bloque boton-esquema btn-ver-perfil">Ver Perfil</button>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-especialista">
+                        <div class="cabecera-tarjeta">
+                            <span class="etiqueta-verificado"><i class="fa-solid fa-shield-check"></i> VIP</span>
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600&h=400"
+                                alt="Ana Rodríguez" class="imagen-fondo-tarjeta">
+                            <div class="superposicion-gradiente"></div>
+                        </div>
+                        <div class="cuerpo-tarjeta">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80"
+                                alt="Perfil" class="imagen-perfil-flotante">
+                            <h3>Ana Rodríguez</h3>
+                            <p class="rol-especialista">Diseño de Marca</p>
+
+                            <div class="detalles-especialista">
+                                <div class="detalle-item calificacion">
+                                    <i class="fa-solid fa-star"></i> <span>5.0 (89)</span>
+                                </div>
+                                <div class="detalle-item ubicacion">
+                                    <i class="fa-solid icono-ubicacion"></i> <span>CDMX</span>
+                                </div>
+                            </div>
+
+                            <button class="boton boton-bloque boton-esquema btn-ver-perfil">Ver Perfil</button>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-especialista">
+                        <div class="cabecera-tarjeta">
+                            <span class="etiqueta-verificado"><i class="fa-solid fa-shield-check"></i> Verificado</span>
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=600&h=400"
+                                alt="Roberto Silva" class="imagen-fondo-tarjeta">
+                            <div class="superposicion-gradiente"></div>
+                        </div>
+                        <div class="cuerpo-tarjeta">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&h=150&q=80"
+                                alt="Perfil" class="imagen-perfil-flotante">
+                            <h3>Roberto Silva</h3>
+                            <p class="rol-especialista">Instalaciones Eléctricas</p>
+
+                            <div class="detalles-especialista">
+                                <div class="detalle-item calificacion">
+                                    <i class="fa-solid fa-star"></i> <span>4.8 (156)</span>
+                                </div>
+                                <div class="detalle-item ubicacion">
+                                    <i class="fa-solid icono-ubicacion"></i> <span>Guadalajara</span>
+                                </div>
+                            </div>
+
+                            <button class="boton boton-bloque boton-esquema btn-ver-perfil">Ver Perfil</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ofrecer" class="seccion seccion-cta">
+            <div class="contenedor contenedor-cta">
+                <div class="texto-cta">
+                    <h2>¿Eres un profesional independiente?</h2>
+                    <p>Únete a miles de profesionales que ya consiguen clientes diariamente mediante nuestra plataforma.
+                        Digitaliza tu trabajo hoy.</p>
+                </div>
+                <div class="boton-cta">
+                    <a href="#" class="boton boton-lg boton-blanco" id="btn-registrate-cta">Comienza Gratis <i
+                            class="fa-solid fa-bolt"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor cuadricula-pie">
+            <div class="info-marca">
+                <div class="logotipo logotipo-pie">
+                    <div class="icono-logotipo"><i class="fa-solid fa-link"></i></div>
+                    <span class="texto-logotipo">ConectaPro</span>
+                </div>
+                <p>La red de profesionales confiables al alcance de tu mano. Transparencia, calidad y agilidad.</p>
+                <div class="redes-sociales">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="enlaces-pie">
+                <h4>Clientes</h4>
+                <ul>
+                    <li><a href="#">Buscar Especialistas</a></li>
+                    <li><a href="#">Cómo funciona</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+            <div class="enlaces-pie">
+                <h4>Profesionales</h4>
+                <ul>
+                    <li><a href="#">Únete a la red</a></li>
+                    <li><a href="#">Historias de Éxito</a></li>
+                    <li><a href="#">Recursos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pie-derechos">
+            <p>&copy; 2026 ConectaPro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="capa-oscura" id="capa-oscura"></div>
+
+    <div class="modal" id="modal-login">
+        <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-cabecera">
+            <h2>Bienvenido de Vuelta</h2>
+            <p>Ingresa tus datos para continuar</p>
+        </div>
+        <form class="formulario" id="form-login">
+            <div class="grupo-input">
+                <label for="login-email">Correo Electrónico</label>
+                <div class="input-con-icono">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+                </div>
+            </div>
+            <div class="grupo-input">
+                <label for="login-password">Contraseña</label>
+                <div class="input-con-icono">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+            </div>
+            <button type="submit" class="boton boton-bloque boton-primario">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <div class="modal" id="modal-registro">
+        <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-cabecera">
+            <h2>Crear Cuenta</h2>
+            <p>Únete a la plataforma hoy</p>
+        </div>
+        <form class="formulario" id="form-registro">
+            <div class="grupo-input">
+                <label for="reg-nombre">Nombre Completo</label>
+                <div class="input-con-icono">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="reg-nombre" placeholder="Juan Pérez" required>
+                </div>
+            </div>
+            <div class="grupo-input">
+                <label for="reg-email">Correo Electrónico</label>
+                <div class="input-con-icono">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+                </div>
+            </div>
+            <div class="grupo-input">
+                <label for="reg-password">Contraseña</label>
+                <div class="input-con-icono">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+            </div>
+            <button type="submit" class="boton boton-bloque boton-primario">Registrarse</button>
+        </form>
+    </div>
+
+    <div class="modal modal-perfil" id="modal-perfil">
+        <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div class="portada-perfil"></div>
+        <div class="contenido-perfil">
+            <img src="" alt="Perfil" class="imagen-perfil-modal" id="img-perfil-modal">
+            <h2 id="nombre-perfil-modal">Nombre</h2>
+            <span class="rol-especialista-modal" id="rol-perfil-modal">Profesión</span>
+
+            <div class="estadisticas-perfil">
+                <div class="stat"><i class="fa-solid fa-star"></i> <span id="rating-perfil-modal">5.0</span></div>
+                <div class="stat"><i class="fa-solid icono-ubicacion"></i> <span
+                        id="ubicacion-perfil-modal">Lugar</span></div>
+            </div>
+
+            <p class="bio-perfil">¡Hola! Soy un especialista apasionado por brindar el mejor servicio. Mis clientes me
+                recomiendan por mi puntualidad y calidad de trabajo garantizada.</p>
+
+            <button class="boton boton-bloque boton-primario btn-agendar">Agendar Cita Ahora</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

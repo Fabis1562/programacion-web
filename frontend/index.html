@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaPro - Encuentra Especialistas</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modales.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <div class="circulo-decorativo circulo-1"></div>
+    <div class="circulo-decorativo circulo-2"></div>
+
+    <div id="placeholder-header"></div>
+
+    <main>
+        <section class="seccion-hero">
+            <div class="contenedor contenido-hero">
+                <h1>Encuentra al <span class="texto-resaltado">Especialista Perfecto</span> para tu Proyecto</h1>
+                <p>La plataforma definitiva que conecta emprendedores y hogares con profesionales verificados,
+                    ofreciendo un servicio de excelencia garantizada.</p>
+
+                <div class="barra-busqueda">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Buscar especialistas, servicios, etc...">
+                    <button class="boton-buscar-icono" onclick="window.location.href='buscar.html?v=8'"><i
+                            class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <div class="grupo-botones-hero">
+                    <a href="buscar.html?v=8" class="boton boton-lg boton-primario">Explorar Servicios</a>
+                    <a href="unete.html" class="boton boton-lg boton-secundario">Ofrecer Mis Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion contenedor">
+            <div class="encabezado-seccion">
+                <h2>Explora por Categorías</h2>
+                <p>Navega a través de nuestros sectores y encuentra justo lo que necesitas.</p>
+            </div>
+
+            <div class="cuadricula-categorias">
+                <div class="tarjeta-categoria" onclick="window.location.href='buscar.html?v=8'">
+                    <div class="icono-contenedor icon-azul"><i class="fa-solid icono-plomeria"></i></div>
+                    <h3>Plomería</h3>
+                </div>
+                <div class="tarjeta-categoria" onclick="window.location.href='buscar.html?v=8'">
+                    <div class="icono-contenedor icon-amarillo"><i class="fa-solid icono-electricidad"></i></div>
+                    <h3>Electricidad</h3>
+                </div>
+                <div class="tarjeta-categoria" onclick="window.location.href='buscar.html?v=8'">
+                    <div class="icono-contenedor icon-morado"><i class="fa-solid icono-diseno"></i></div>
+                    <h3>Diseño</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" style="background-color: #f8fafc; padding: 60px 0;">
+            <div class="contenedor">
+                <div class="encabezado-seccion" style="margin-bottom: 40px;">
+                    <h2>Historias de Éxito</h2>
+                    <p>Mira lo que opinan las personas que ya contrataron a nuestros especialistas.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <!-- Testimonio 1 -->
+                    <div style="background: white; padding: 30px; border-radius: var(--radio-borde-lg); box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative;">
+                        <i class="fa-solid fa-quote-left" style="font-size: 30px; color: #e0e7ff; position: absolute; top: 20px; left: 20px;"></i>
+                        <div style="display: flex; gap: 5px; color: #FFC107; margin-bottom: 15px; padding-left: 40px;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p style="color: var(--color-texto); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"Tenía una fuga de agua terrible en mi casa y el plomero llegó en menos de 30 minutos. El trabajo fue impecable y a un precio muy justo. La plataforma es facilísima de usar."</p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-secundario);">M</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 16px;">María González</h4>
+                                <span style="font-size: 13px; color: var(--color-texto-ligero);">Contrató a un Plomero</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div style="background: white; padding: 30px; border-radius: var(--radio-borde-lg); box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative;">
+                        <i class="fa-solid fa-quote-left" style="font-size: 30px; color: #e0e7ff; position: absolute; top: 20px; left: 20px;"></i>
+                        <div style="display: flex; gap: 5px; color: #FFC107; margin-bottom: 15px; padding-left: 40px;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p style="color: var(--color-texto); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"Necesitaba un rediseño de mi marca urgente. Encontré a una diseñadora gráfica increíble aquí. ¡El logo quedó espectacular! Definitivamente volveré a usar ConectaPro."</p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-secundario);">C</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 16px;">Carlos Medina</h4>
+                                <span style="font-size: 13px; color: var(--color-texto-ligero);">Contrató a un Diseñador Gráfico</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div style="background: white; padding: 30px; border-radius: var(--radio-borde-lg); box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative;">
+                        <i class="fa-solid fa-quote-left" style="font-size: 30px; color: #e0e7ff; position: absolute; top: 20px; left: 20px;"></i>
+                        <div style="display: flex; gap: 5px; color: #FFC107; margin-bottom: 15px; padding-left: 40px;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p style="color: var(--color-texto); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"El electricista me explicó exactamente cuál era el problema con mi instalación y lo solucionó rápidamente. Me encantó que pude ver sus reseñas antes de contratarlo."</p>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-secundario);">A</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 16px;">Andrea Rojas</h4>
+                                <span style="font-size: 13px; color: var(--color-texto-ligero);">Contrató a un Electricista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion-cta">
+            <div class="contenedor contenedor-cta">
+                <div class="texto-cta">
+                    <h2>¿Eres un profesional independiente?</h2>
+                    <p>Únete a miles de profesionales que ya consiguen clientes diariamente mediante nuestra plataforma.
+                        Digitaliza tu trabajo hoy.</p>
+                </div>
+                <div class="boton-cta">
+                    <a href="#" class="boton boton-lg boton-primario"
+                        style="background:white; color:var(--color-primario);" id="btn-registrate-cta">Comienza Gratis
+                        <i class="fa-solid fa-bolt"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="placeholder-footer"></div>
+    <div id="placeholder-modales"></div>
+    <script src="js/layout.js?v=8"></script>
+    <script src="js/modales.js?v=8"></script>
+</body>
+
+</html>

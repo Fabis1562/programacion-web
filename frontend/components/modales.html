@@ -1,0 +1,108 @@
+<!-- Modales y Scripts Dinámicos (Se inyecta al final del body) -->
+<div class="capa-oscura" id="capa-oscura"></div>
+
+<div class="modal" id="modal-login">
+    <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-cabecera">
+        <h2>Bienvenido de Vuelta</h2>
+        <p>Ingresa tus datos para continuar</p>
+    </div>
+    <form class="formulario" id="form-login">
+        <div class="grupo-input">
+            <label for="login-email">Correo Electrónico</label>
+            <div class="input-con-icono">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" id="login-email" placeholder="ejemplo@correo.com" required>
+            </div>
+        </div>
+        <div class="grupo-input">
+            <label for="login-password">Contraseña</label>
+            <div class="input-con-icono">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="login-password" placeholder="••••••••" required>
+            </div>
+        </div>
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="recuperar.html" style="color: var(--color-primario); font-size: 13px; text-decoration: none;">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="boton boton-bloque boton-primario">Iniciar Sesión</button>
+    </form>
+</div>
+
+<div class="modal" id="modal-registro">
+    <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-cabecera">
+        <h2>Crear Cuenta</h2>
+        <p>Únete a la plataforma hoy</p>
+    </div>
+    <form class="formulario" id="form-registro">
+        <div class="grupo-input">
+            <label for="reg-nombre">Nombre Completo</label>
+            <div class="input-con-icono">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" id="reg-nombre" placeholder="Juan Pérez" required>
+            </div>
+        </div>
+        <div class="grupo-input">
+            <label for="reg-email">Correo Electrónico</label>
+            <div class="input-con-icono">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required>
+            </div>
+        </div>
+        <div class="grupo-input">
+            <label for="reg-password">Contraseña</label>
+            <div class="input-con-icono">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="reg-password" placeholder="••••••••" required>
+            </div>
+        </div>
+        <button type="submit" class="boton boton-bloque boton-primario">Registrarse</button>
+    </form>
+</div>
+
+<div class="modal" id="modal-perfil" style="max-width: 600px;">
+    <button class="boton-cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+        <img id="img-perfil-modal" src="" alt="Perfil" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div>
+            <h2 id="nombre-perfil-modal" style="margin: 0; font-family: var(--fuente-titulos); color: var(--color-secundario);">Nombre</h2>
+            <p id="rol-perfil-modal" style="color: var(--color-primario); font-weight: 500; margin: 5px 0 0 0;">Rol</p>
+            <div style="display: flex; gap: 15px; margin-top: 10px; font-size: 0.9em; color: var(--color-texto-secundario);">
+                <span><i class="fa-solid fa-star" style="color: #FFC107;"></i> <span id="rating-perfil-modal">5.0</span></span>
+                <span><i class="fa-solid fa-location-dot"></i> <span id="ubicacion-perfil-modal">Ubicación</span></span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 16px; margin-bottom: 10px; color: var(--color-secundario);">Sobre mí</h3>
+        <p id="bio-perfil-modal" style="color: var(--color-texto); line-height: 1.6; font-size: 14px;"></p>
+    </div>
+
+    <div style="margin-bottom: 25px; padding: 15px; background: var(--color-fondo); border-radius: var(--radio-borde); text-align: center;">
+        <h4 style="margin: 0 0 10px 0; color: var(--color-secundario);">Dejar una Reseña</h4>
+        <div id="estrellas-calificacion" style="font-size: 24px; color: #ccc; cursor: pointer; display: flex; justify-content: center; gap: 5px; margin-bottom: 10px;">
+            <i class="fa-solid fa-star estrella" data-valor="1"></i>
+            <i class="fa-solid fa-star estrella" data-valor="2"></i>
+            <i class="fa-solid fa-star estrella" data-valor="3"></i>
+            <i class="fa-solid fa-star estrella" data-valor="4"></i>
+            <i class="fa-solid fa-star estrella" data-valor="5"></i>
+        </div>
+        <div id="area-resena" style="display: none;">
+            <textarea id="texto-resena" rows="2" placeholder="Opcional: Escribe un comentario sobre el servicio..." style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; font-family: var(--fuente-principal); font-size: 12px; resize: vertical;"></textarea>
+            <button id="btn-enviar-resena" class="boton boton-primario" style="padding: 8px 15px; font-size: 12px;">Enviar Reseña</button>
+        </div>
+        <p id="mensaje-calificacion" style="font-size: 12px; color: var(--color-primario); margin-top: 5px; display: none;">¡Gracias por tu reseña!</p>
+    </div>
+
+    <div id="area-mensaje" style="margin-top: 15px; display: none; margin-bottom: 15px;">
+        <textarea id="texto-mensaje" rows="3" placeholder="Escribe tu mensaje aquí..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radio-borde); font-family: var(--fuente-principal); font-size: 14px; resize: vertical;"></textarea>
+        <button id="btn-confirmar-mensaje" class="boton boton-bloque boton-primario" style="margin-top: 10px; background: #10B981; border-color: #10B981;">Enviar</button>
+        <p id="feedback-mensaje" style="font-size: 13px; margin-top: 5px; text-align: center; display: none;"></p>
+    </div>
+
+    <button id="btn-abrir-mensaje" class="boton boton-bloque boton-primario">
+        <i class="fa-regular fa-paper-plane"></i> Contactar por Mensaje
+    </button>
+</div>

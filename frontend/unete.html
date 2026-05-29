@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete a la Red - ConectaPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modales.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body style="background:var(--color-fondo);">
+    <div id="placeholder-header"></div>
+    <main class="contenedor seccion">
+        <div style="background:linear-gradient(135deg, var(--color-primario), #a855f7); color:white; padding:80px 40px; border-radius:var(--radio-borde-lg); text-align:center;">
+            <h1 style="font-size:48px; margin-bottom:20px; color:white;">Lleva tu profesión al siguiente nivel</h1>
+            <p style="font-size:20px; max-width:600px; margin:0 auto 40px auto; opacity:0.9;">Accede a cientos de clientes diarios en tu zona geográfica estableciendo tus propios horarios y precios.</p>
+            <button class="boton boton-blanco boton-lg" onclick="document.dispatchEvent(new Event('ComponentesCargados')); document.getElementById('modal-registro').classList.add('activa'); document.getElementById('capa-oscura').classList.add('activa');">Inscríbete Ahora Mismo</button>
+        </div>
+    </main>
+    <div id="placeholder-footer"></div>
+    <div id="placeholder-modales"></div>
+    <script src="js/layout.js"></script>
+    <script src="js/modales.js"></script>
+</body>
+</html>
