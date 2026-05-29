@@ -1,12 +1,12 @@
 <?php
 // backend/config.php
 
-// Intentar leer de las variables de entorno reales del sistema (común en servidores de producción como Railway, Clever Cloud, etc.)
-$host = getenv('DB_HOST') ?: (isset($_ENV['DB_HOST']) ? $_ENV['DB_HOST'] : null);
-$port = getenv('DB_PORT') ?: (isset($_ENV['DB_PORT']) ? $_ENV['DB_PORT'] : null);
-$dbname = getenv('DB_NAME') ?: (isset($_ENV['DB_NAME']) ? $_ENV['DB_NAME'] : null);
-$user = getenv('DB_USER') ?: (isset($_ENV['DB_USER']) ? $_ENV['DB_USER'] : null);
-$password = getenv('DB_PASSWORD') ?: (isset($_ENV['DB_PASSWORD']) ? $_ENV['DB_PASSWORD'] : null);
+// Intentar leer de las variables de entorno reales del sistema (común en servidores de producción como Clever Cloud, Railway, etc.)
+$host = getenv('POSTGRESQL_ADDON_HOST') ?: getenv('DB_HOST') ?: (isset($_ENV['POSTGRESQL_ADDON_HOST']) ? $_ENV['POSTGRESQL_ADDON_HOST'] : (isset($_ENV['DB_HOST']) ? $_ENV['DB_HOST'] : null));
+$port = getenv('POSTGRESQL_ADDON_PORT') ?: getenv('DB_PORT') ?: (isset($_ENV['POSTGRESQL_ADDON_PORT']) ? $_ENV['POSTGRESQL_ADDON_PORT'] : (isset($_ENV['DB_PORT']) ? $_ENV['DB_PORT'] : null));
+$dbname = getenv('POSTGRESQL_ADDON_DB') ?: getenv('DB_NAME') ?: (isset($_ENV['POSTGRESQL_ADDON_DB']) ? $_ENV['POSTGRESQL_ADDON_DB'] : (isset($_ENV['DB_NAME']) ? $_ENV['DB_NAME'] : null));
+$user = getenv('POSTGRESQL_ADDON_USER') ?: getenv('DB_USER') ?: (isset($_ENV['POSTGRESQL_ADDON_USER']) ? $_ENV['POSTGRESQL_ADDON_USER'] : (isset($_ENV['DB_USER']) ? $_ENV['DB_USER'] : null));
+$password = getenv('POSTGRESQL_ADDON_PASSWORD') ?: getenv('DB_PASSWORD') ?: (isset($_ENV['POSTGRESQL_ADDON_PASSWORD']) ? $_ENV['POSTGRESQL_ADDON_PASSWORD'] : (isset($_ENV['DB_PASSWORD']) ? $_ENV['DB_PASSWORD'] : null));
 
 // Si no están definidas en el sistema, intentar leer del archivo local .env
 if (!$host || !$dbname || !$user) {
