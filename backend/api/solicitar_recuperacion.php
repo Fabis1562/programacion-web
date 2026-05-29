@@ -33,7 +33,18 @@ if (!empty($data->email)) {
             $update->bindParam(":id", $user['id']);
             $update->execute();
 
-            $enlace = "http://localhost/programacion%20web/frontend/restablecer.html?token=" . $token;
+            // Generar enlace dinámico según si es local (XAMPP con subcarpeta) o producción (Clever Cloud)
+            $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+            if ($host === 'localhost' || $host === '127.0.0.1' || strpos($host, '192.168.') === 0) {
+                $enlace = "http://" . $host . "/programacion%20web/frontend/restablecer.html?token=" . $token;
+            } else {
+                // En producción (Clever Cloud)
+                $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+                if (strpos($host, 'cleverapps.io') !== false) {
+                    $protocol = "https"; // Clever Cloud siempre soporta y fuerza HTTPS
+                }
+                $enlace = $protocol . "://" . $host . "/frontend/restablecer.html?token=" . $token;
+            }
 
             // Enviar correo real usando PHPMailer
             require '../libs/PHPMailer/Exception.php';
